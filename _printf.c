@@ -3,6 +3,8 @@
 #include <stdarg.h>
 #include <string.h>
 #include "holberton.h"
+#include <unistd.h>
+
 /**
  * _printf - _printf
  * @format: format
@@ -49,7 +51,7 @@ j++;
 i++;
 }
 va_end(f1);
-fwrite(stock, j, 1, stdout);
+write(1, stock, j);
 free(stock);
 return (j);
 }
