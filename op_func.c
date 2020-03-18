@@ -20,5 +20,6 @@ void write_per(char *src, va_list arg)
 {
 	char c = '%';
 
+	(void)arg;
 	src = _strncat(src, &c, 1);
 }
