@@ -22,8 +22,6 @@ int _printf(const char *format, ...)
 	stock[0] = '\0';
 	while (format && format[i])
 	{
-		printf("--->0 here%d\n",format == NULL);
-
 		N = format[i + 1];
 		if (!(format[i] == '%' && (N == 'c' || N == 's' || N == '%')))
 		{
@@ -45,7 +43,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	printf("--->1here%d\n",format == NULL);
 	va_end(arg);
 	len = _strlen(stock);
 	_puts(stock);
