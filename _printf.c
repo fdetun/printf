@@ -1,5 +1,11 @@
 #include "holberton.h"
-
+/**
+ *_printf - A function that produces output according to a format.
+ *
+ *@format: A string that specifies the output behavior.
+ *
+ * Return: The output length.
+ */
 int _printf(const char *format, ...)
 {
 	Printer Occ[] = {
@@ -8,7 +14,7 @@ int _printf(const char *format, ...)
 		{'%', write_per},
 		{0, NULL}
 	};
-	char *stock = malloc(1024 * sizeof(char)), ch;
+	char *stock = malloc(1024 * sizeof(char)), ch, N;
 	va_list arg;
 	unsigned int  i = 0, j = 0, len;
 
@@ -16,7 +22,8 @@ int _printf(const char *format, ...)
 	stock[0] = '\0';
 	while (format[i] && format)
 	{
-		if (format[i] != '%')
+		N = format[i + 1];
+		if (!(format[i] == '%' && (N == 'c' || N == 's' || N == '%')))
 		{
 			ch = format[i];
 			stock = _strncat(stock, &ch, 1);
