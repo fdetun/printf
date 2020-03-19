@@ -7,7 +7,7 @@ void write_str(char *src, va_list arg)
 	if (str)
 		src = _strncat(src, str, _strlen(str));
 	else
-		src = _strncat(src, "(nil)", 5);
+		src = _strncat(src, "(null)", 7);
 }
 void write_char(char *src, va_list arg)
 {
