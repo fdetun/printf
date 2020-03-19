@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	};
 	char *stock = malloc(1024 * sizeof(char)), ch, N;
 	va_list arg;
-	unsigned int  i = 0, j = 0, len;
+	unsigned int  i = 0, j = 0, len = -1;
 
 	va_start(arg, format);
 	stock[0] = '\0';
@@ -42,9 +42,9 @@ int _printf(const char *format, ...)
 			}
 		}
 		i++;
+		len = _strlen(stock);
 	}
 	va_end(arg);
-	len = _strlen(stock);
 	_puts(stock);
 	free(stock);
 	return (len);
