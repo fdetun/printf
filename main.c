@@ -22,7 +22,7 @@ int main(void)
     // printf("---------->%ld\n",strlen(big_str));
     
     // len2 =_printf("%s\n",big_str);
-    len = _printf("fakhri%s\n", big_str);
+    len = _printf("Let's print a simple sentence.\n");
     printf("------->%d\n",len );
     free(big_str);
 

@@ -6,7 +6,7 @@ char *write_str(char *src, va_list arg)
 	int Len = strlen(str_) + strlen(src) + 1, i = 0;
 	char *Pt = NULL;
 
-	if (Len > 10)
+	if (Len > 1024)
 	{
 		Pt = _strdup(src);
 		free(src);

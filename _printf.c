@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	Printer Occ[] = {{'c', write_char},
 {'s', write_str}, {'%', write_per}, {0, NULL}};
-	char *stock = malloc(10 * sizeof(char)), ch, N;
+	char *stock = malloc(1024 * sizeof(char)), ch, N;
 	va_list arg;
 	unsigned int  i = 0, j = 0, len = -1;
 
