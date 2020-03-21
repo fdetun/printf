@@ -8,13 +8,9 @@
  */
 int _printf(const char *format, ...)
 {
-	Printer Occ[] = {
-		{'c', write_char},
-		{'s', write_str},
-		{'%', write_per},
-		{0, NULL}
-	};
-	char *stock = malloc(1024 * sizeof(char)), ch, N;
+	Printer Occ[] = {{'c', write_char},
+{'s', write_str}, {'%', write_per}, {0, NULL}};
+	char *stock = malloc(10 * sizeof(char)), ch, N;
 	va_list arg;
 	unsigned int  i = 0, j = 0, len = -1;
 
@@ -34,7 +30,7 @@ int _printf(const char *format, ...)
 			{
 				if (Occ[j].op == format[i + 1])
 				{
-					Occ[j].p(stock, arg);
+					stock = Occ[j].p(stock, arg);
 					i++;
 					break;
 				}
